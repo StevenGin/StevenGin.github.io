@@ -20,7 +20,7 @@ layout: page
   {% assign offset = forloop.index0 | times: 2 %}
   <div class = "row">
     {% for post in site.posts limit:2 offset:offset %}
-      <div class = "col">
+      <div class = "col-sm-6">
       <div class="card border-dark mb-3" style="max-width: 20rem;">
         <div class="card-header">
           <a href = "{{ post.url }}"> Header </a>
