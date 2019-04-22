@@ -2,9 +2,10 @@
 layout: page
 <!-- title: data is my bacon -->
 ---
+
 <div class="jumbotron">
-  <h1 class="display-3">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <h1 class="display-5">Hello I'm Steven Gin!</h1>
+  <p class="lead">Economist turned Data Scientist. Works at sfasf. Lover of all things game theory and mathematics.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
   <p class="lead">
@@ -12,19 +13,26 @@ layout: page
   </p>
 </div>
 
-
-
-<!--I want to to make this into a 4 card layout of 4 most rcent projects  -->
 <center>
-{% for post in site.posts limit:4 %}
-  <div class="card border-dark mb-3" style="max-width: 20rem;">
-    <div class="card-header">
-      <a href = "{{ post.url }}"> Header </a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">{{ post.title }}</h4>
-      <p class="card-text">{{ post.description }}</p>
-    </div>
+<div class = "container">
+{% assign rows = site.posts.size | divided_by: 2.0 | ceil %}
+{% for i in (1..rows) %}
+  {% assign offset = forloop.index0 | times: 2 %}
+  <div class = "row">
+    {% for post in site.posts limit:2 offset:offset %}
+      <div class = "col">
+      <div class="card border-dark mb-3" style="max-width: 20rem;">
+        <div class="card-header">
+          <a href = "{{ post.url }}"> Header </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">{{ post.title }}</h4>
+          <p class="card-text">{{ post.description }}</p>
+        </div>
+      </div>
+      </div>
+    {% endfor %}
   </div>
 {% endfor %}
+</div>
 </center>
