@@ -1,0 +1,76 @@
+
+body {
+  background: $body-bg;
+}
+
+.name_container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  // height: 100vh;
+  overflow: hidden;
+  > * {
+    margin: 5px;
+  }
+  font-size: 40px;
+  color: $primary;
+}
+
+.name {
+  display: flex;
+}
+
+.left {
+  // z-index: 1000;
+  position: relative;
+  width: 26px;
+  height: 60px;
+  overflow: hidden;
+  color: $primary;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  transition: width 0.4s 0.1s;
+}
+
+
+
+.right {
+  // z-index: 1000;
+  position: relative;
+  width: 33px;
+  height: 60px;
+  overflow: hidden;
+  color: $primary;
+  font-family: $font-family-sans-serif;
+  font-weight: 700;
+  font-size: 50px;
+  transition: width 0.4s 0.1s;
+}
+
+.right:hover,
+.left:hover {
+  transition: width 0.4s 0.1s;
+}
+
+.left:hover {
+  width: 160px;
+}
+
+.right:hover {
+  width: 110px;
+}
+
+// span {
+//   position: absolute;
+// }
+
+#name {
+  left: 26px;
+  position: absolute;
+}
+
+#name2 {
+  left: 35px;
+  position: absolute;
+}

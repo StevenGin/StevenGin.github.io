@@ -4,13 +4,30 @@ layout: page
 ---
 
 <div class="jumbotron">
-  <h1 class="display-5">Hello I'm Steven Gin!</h1>
-  <p class="lead">Economist turned Data Scientist. Works at sfasf. Lover of all things game theory and mathematics.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
+  <h1 class="display-5">Hello I'm...
+
+<div class="container">
+  <div class="name">
+    <div class="left">
+      <span style="position: absolute">S</span>
+      <span id="name">teven</span>
+    </div>
+
+    <div class="right">
+      <span style="position: absolute"> G</span>
+      <span id="name2">in</span>
+    </div>
+  </div>
+</div>
+
+</h1>
+
+<p class="lead">Economist turned Data Scientist. Works at sfasf. Lover of all things game theory and mathematics.</p>
+<hr class="my-4">
+<p>This is my website where I'm learning to make web stuff and blog about my data science misadventures.</p>
+<p class="lead">
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</p>
 </div>
 
 <center>
