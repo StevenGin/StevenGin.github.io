@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-description: "Here is a short description"
+title:  "Strength of Schedule!"
+description: "Improving existing algorithms using recursive elo"
 ---
 
 # Welcome

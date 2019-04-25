@@ -40,11 +40,12 @@ layout: page
       <div class = "col-sm-6">
       <div class="card border-dark mb-3" style="max-width: 20rem;">
         <div class="card-header">
-          <a href = "{{ post.url }}"> Header </a>
+          {{ post.date | date: '%B %d, %Y' }}
         </div>
         <div class="card-body">
           <h4 class="card-title">{{ post.title }}</h4>
           <p class="card-text">{{ post.description }}</p>
+          <a class="btn btn-secondary" href="{{ post.url }}" role="button">Learn more</a>
         </div>
       </div>
       </div>
