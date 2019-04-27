@@ -8,7 +8,7 @@ tags: blog
 
 # Welcome
 
-Ever year **Kaggle** hosts a competition to predict the NCAA collegiate basketball playoffs. Known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring. While I didn't win, I made some novel improvements over existing approaches worth discussing.   
+Ever year **Kaggle** hosts a competition to predict the NCAA collegiate basketball playoffs. Known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring. The experience turned out to be one of the most arduous and rewarding endeavors I've ever tackled. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations.
 
 ## The Competition
 Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition to fill out your expected winner of each match and see how you fare against actual competition results. If you were to guess the outcome of each match randomly your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. That's a pretty tall task!
@@ -44,7 +44,7 @@ We are ultimately interested in the zero sum outcome of a match. Whether a team 
 
 3. Using XGBoost and LightGBM
 
-These two boosting algorithms are Kaggle staples. Choosing to use these was mainly in the interest of getting more familiar with them!
+These two boosting algorithms are Kaggle staples. Choosing to use these was mainly in the interest of getting more familiar with them! The final model was primarily an ensemble of these two models.
 
 
 

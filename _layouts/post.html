@@ -13,7 +13,7 @@ layout: default
       {%- if page.author -%}
         • {{ page.author }}
       {%- endif -%}
-       | Read Time: {{ page.content | number_of_words  | divided_by: 256 }} Min
+       | {{ page.content | number_of_words  | divided_by: 200 }} min read
     </p>
   </header>
 
