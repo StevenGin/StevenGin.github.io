@@ -1,15 +1,4 @@
----
-layout: page
-<!-- title: data is my bacon -->
----
-<h1 class="ml1">
-  <span class="text-wrapper">
-    <span class="line line1"></span>
-    <span class="letters">THURSDAY</span>
-    <span class="line line2"></span>
-  </span>
-</h1>
-<script>
+// Wrap every letter in a span
 $('.ml1 .letters').each(function(){
   $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
 });
@@ -42,4 +31,3 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
   });
-  </script>

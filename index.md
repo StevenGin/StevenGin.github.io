@@ -6,7 +6,7 @@ layout: page
 <div class="jumbotron">
   <h1 class="display-5">Hello I'm...
 
-<div class="container">
+<!-- <div class="name_container">
   <div class="name">
     <div class="left">
       <span style="position: absolute">S</span>
@@ -18,9 +18,50 @@ layout: page
       <span id="name2">in</span>
     </div>
   </div>
-</div>
+</div> -->
 
 </h1>
+
+<h1 class="ml5">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letters letters-left">Steven</span>
+    <span class="letters letters-right">Gin</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
+<script>
+anime.timeline({})
+  .add({
+    targets: '.ml5 .line',
+    opacity: [0.5,1],
+    scaleX: [0, 1],
+    easing: "easeInOutExpo",
+    duration: 700
+  }).add({
+    targets: '.ml5 .line',
+    duration: 600,
+    easing: "easeOutExpo",
+    translateY: function(e, i, l) {
+      var offset = -0.625 + 0.625*2*i;
+      return offset + "em";
+    }
+  }).add({
+    targets: '.ml5 .letters-left',
+    opacity: [0,1],
+    translateX: ["0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=300'
+  }).add({
+    targets: '.ml5 .letters-right',
+    opacity: [0,1],
+    translateX: ["-0.5em", 0],
+    easing: "easeOutExpo",
+    duration: 600,
+    offset: '-=600'
+  });
+  </script>
 
 <p class="lead">Economist turned Data Scientist. Works at sfasf. Lover of all things game theory and mathematics.</p>
 <hr class="my-4">
