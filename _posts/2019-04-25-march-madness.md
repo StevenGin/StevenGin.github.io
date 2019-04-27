@@ -14,7 +14,8 @@ Ever year **Kaggle** hosts a competition to predict the NCAA collegiate basketba
 Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition to fill out your expected winner of each match and see how you fare against actual competition results. If you were to guess the outcome of each match randomly your chance to win would be one in 2^63 or 9.2 quintillion.
 
 ![George Bush Bracket](/assets/images/bush_mm .jpg)
-Former President George Bush's Predictions (Source)
+
+Former President George H. W. Bush's Predictions ([Source](https://twitter.com/georgehwbush/status/974345353322483713?lang=en))
 
 Kaggle also challenged participants to predict the outcome of matches albeit with two key differences.
 1. Kaggle competitors predict the outcome of every possible match (although they are only evaluated on games that actually occur). This is opposed to regular bracket predictions where wrong early picks can lock you out of matchups deeper in the tournament.
