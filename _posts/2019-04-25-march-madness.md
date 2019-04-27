@@ -2,7 +2,9 @@
 layout: post
 title:  "Strength of Schedule!"
 description: "Improving existing algorithms using recursive elo"
+tags: blog
 ---
+
 
 # Welcome
 
