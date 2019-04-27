@@ -11,11 +11,15 @@ tags: blog
 Ever year **Kaggle** hosts a competition to predict the NCAA collegiate basketball playoffs. Known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring. While I didn't win, I made some novel improvements over existing approaches worth discussing.   
 
 ## The Competition
-Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition to fill out your expected winner of each match and see how you fare against actual competition results.
+Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition to fill out your expected winner of each match and see how you fare against actual competition results. If you were to guess the outcome of each match randomly your chance to win would be one in 2^63 or 9.2 quintillion.
 
-![George Bush Bracket](/assets/images/bush_mm.jpg)
+![George Bush Bracket](/assets/images/bush_mm .jpg)
+Former President George Bush's Predictions (Source)
 
-The Kaggle competition was essentially this but in varied in one key way. Instead of pred
+Kaggle also challenged participants to predict the outcome of matches albeit with two key differences.
+1. Kaggle competitors predict the outcome of every possible match (although they are only evaluated on games that actually occur). This is opposed to regular bracket predictions where wrong early picks can lock you out of matchups deeper in the tournament.
+
+2. Kaggle competitors predict the chance each team will win. Participants are then evaluated using **Log Loss**. In normal brackets, the quality of a prediction is gauged by tallying up the amount of correctly selected winners.
 
 ## The Data
 
