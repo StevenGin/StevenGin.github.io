@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "March Madness meets Chess!"
-description: "Improving existing algorithms using recursive elo"
+description: "Improving existing algorithms using recursive elo regression in Kaggle 2018"
 tags: blog
 ---
 
@@ -24,16 +24,40 @@ Kaggle also challenged participants to predict the outcome of matches albeit wit
 2. Kaggle competitors predict the chance each team will win. Participants are then evaluated using **Log Loss**. In normal brackets, the quality of a prediction is gauged by tallying up the amount of correctly selected winners.
 
 ## The Data
+Graciously provided in the competition was a treasure trove of NCAA historical data. Not only did we have the outcome of every game, but we had a timestamp of every individual play.
+
+EXAMPLE Data
+
+For instance, we can see that at 00:00 sank a 3 pointer
 
 ## My Approach
-The model we built was an ensemble of primarily XGBoost and LightGBM, popular kaggle staples. As a team we engineered plenty of features. Some of the more interesting ones that ended up being significant were elevation
+### Preface
+For this project, I paired up with my good friend **Justin Wong** who helped me greatly with a lot of the feature engineering. Early on, we made some big decisions on the direction of our predictive model.
 
+1. Ignoring player level data
+
+Modeling at the individual level was certainly a consideration early on. This was ruled out for a few reasons. Firstly, there was far less data on collegiate level athletes as opposed to their professional counterparts. Secondly, in a team game like basketball, it's extraordinarily difficult to identify a single player's contribution to a game, especially when quantifying defensive contribution. We decided it would be
+
+2. Predict first on **box score**, then convert to probability.
+
+We are ultimately interested in the zero sum outcome of a match. Whether a team wins by 1pt or 100pts isn't relevant for the competition. That being said, it is my notion that the margin of victory has encoded in it valuable information on the true strength of a team.
+
+3. Using XGBoost and LightGBM
+
+These two boosting algorithms are Kaggle staples. Choosing to use these was mainly in the interest of getting more familiar with them!
+
+
+
+### Basketball Stats
 **Offensive Efficiency**:
 
 **Defensive Efficiency**:
 
+**Tempo**:
 
+
+### ELO System
 
 **Adjusted Efficiency**
 
-## ELO Regression
+### ELO Regression

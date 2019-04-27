@@ -4,24 +4,6 @@ layout: page
 ---
 
 <div class="jumbotron">
-  <h1 class="display-5">Hello I'm...
-
-<!-- <div class="name_container">
-  <div class="name">
-    <div class="left">
-      <span style="position: absolute">S</span>
-      <span id="name">teven</span>
-    </div>
-
-    <div class="right">
-      <span style="position: absolute"> G</span>
-      <span id="name2">in</span>
-    </div>
-  </div>
-</div> -->
-
-</h1>
-
 <h1 class="ml5">
   <span class="text-wrapper">
     <span class="line line1"></span>
