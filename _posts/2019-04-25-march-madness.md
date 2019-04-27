@@ -13,7 +13,7 @@ Ever year **Kaggle** hosts a competition to predict the NCAA collegiate basketba
 ## The Competition
 Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition to fill out your expected winner of each match and see how you fare against actual competition results. If you were to guess the outcome of each match randomly your chance to win would be one in 2^63 or 9.2 quintillion.
 
-![George Bush Bracket](/assets/images/bush_mm .jpg)
+![George Bush Bracket](/assets/images/bush_mm.jpg)
 
 Former President George H. W. Bush's Predictions ([Source](https://twitter.com/georgehwbush/status/974345353322483713?lang=en))
 
