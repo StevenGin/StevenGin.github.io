@@ -5,7 +5,6 @@ layout: default
 
   <header>
     <h1>{{ page.title | escape }}</h1>
-    {{ page.content | number_of_words }}
     <p class="text-muted">
       <time datetime="{{ page.date | date_to_xmlschema }}">
         {%- assign date_format = "%b %-d, %Y" -%}
@@ -14,6 +13,7 @@ layout: default
       {%- if page.author -%}
         • {{ page.author }}
       {%- endif -%}
+      Read Time: {{ page.content | number_of_words  | divided_by: 256 }} Min
     </p>
   </header>
 
