@@ -13,7 +13,7 @@ Ever year **Kaggle** hosts a competition to predict the NCAA collegiate basketba
 ## The Competition
 Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition to fill out your expected winner of each match and see how you fare against actual competition results.
 
-[[Image of Barrack Obama's Bracket]]
+![George Bush Bracket](/assets/images/bush_mm.jpg)
 
 The Kaggle competition was essentially this but in varied in one key way. Instead of pred
 
