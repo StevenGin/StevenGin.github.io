@@ -4,11 +4,15 @@ title:  "March Madness meets Chess!"
 description: "Improving existing algorithms using recursive elo regression in Kaggle 2018"
 tags: blog
 ---
-
+<script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+</script>
 
 # Welcome
 
-Ever year, **Kaggle** hosts a competition to predict the NCAA Division I Men's Basketball Tournament, known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring and put my predictive mettle to the test. The experience was incredibly arduous but equally rewarding. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations, that I'd love to share.
+Ever year, **<a href="#" data-toggle="popover" data-placement="top" title="Kaggle" data-content="Kaggle is a website that hosts Machine Learning competitions">Kaggle</a>** hosts a competition to predict the NCAA Division I Men's Basketball Tournament, known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring and put my predictive mettle to the test. The experience was incredibly arduous but equally rewarding. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations, that I'd love to share.
 
 ## The Competition
 Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition for basketball fans  predict winners for each tournament match, often putting money on the line. The American Gambling Association estimates Americans $8.5B in 2019 on March Madness alone ([Source](https://www.americangaming.org/wp-content/uploads/2019/03/March-Madness-One-Pager.pdf)). How hard is it to get a perfect bracket? If you were inclined to just arbitrarily select teams to build your bracket, your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. Those are some pretty bad odds.
