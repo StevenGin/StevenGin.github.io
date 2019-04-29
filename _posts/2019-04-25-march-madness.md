@@ -14,9 +14,8 @@ Ever year, **Kaggle** hosts a competition to predict the NCAA Division I Men's B
 Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition for basketball fans  predict winners for each tournament match, often putting money on the line. The American Gambling Association estimates Americans $8.5B in 2019 on March Madness alone ([Source](https://www.americangaming.org/wp-content/uploads/2019/03/March-Madness-One-Pager.pdf)). How hard is it to get a perfect bracket? If you were inclined to just arbitrarily select teams to build your bracket, your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. Those are some pretty bad odds.
 
 ![Former President George H. W. Bush's Predictions](/assets/images/bush_mm.jpg)
-<center>
+
 *Former President George H. W. Bush's Predictions ([Source](https://twitter.com/georgehwbush/status/974345353322483713?lang=en))*
-</center>
 
 A lot of people Kaggle challenged participants to do a lot better than that and craft their own set of predictions. These differed from traditional bracket predictions in two key ways.
 
@@ -68,6 +67,8 @@ Three particular statistics caught my eye.
 https://kenpom.com/blog/national-efficiency/
 
 Ken Pom then converts these raw statistics to be adjusted for expected stats versus an average team.
+
+
 
 Theoretically using solely these statistics, we could generate box scores.
 
