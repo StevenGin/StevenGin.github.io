@@ -15,11 +15,11 @@ $(function () {
 Ever year, **<a href="#" style="color: #343a40; text-decoration: none;" data-toggle="popover" data-placement="top" data-trigger="focus" title="Kaggle" data-content="Kaggle is a website that hosts Machine Learning competitions.">Kaggle</a>** hosts a competition to predict the NCAA Division I Men's Basketball Tournament, known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring and put my predictive mettle to the test. The experience was incredibly arduous but equally rewarding. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations, that I'd love to share.
 
 ## The Competition
-Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition for basketball fans  predict winners for each tournament match, often putting money on the line. The American Gambling Association estimates Americans $8.5B in 2019 on March Madness alone ([Source](https://www.americangaming.org/wp-content/uploads/2019/03/March-Madness-One-Pager.pdf)). How hard is it to get a perfect bracket? If you were inclined to just arbitrarily select teams to build your bracket, your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. Those are some pretty bad odds.
+Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition for basketball fans  predict winners for each tournament match, often putting money on the line. The American Gambling Association estimates Americans will bet $8.5B in 2019 on just March Madness alone ([Source](https://www.americangaming.org/wp-content/uploads/2019/03/March-Madness-One-Pager.pdf)). How hard is it to get a perfect bracket? If you were inclined to just arbitrarily select teams to build your bracket, your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. Those are some pretty bad odds.
 
 ![Former President George H. W. Bush's Predictions](/assets/images/bush_mm.jpg)
 
-*Former President George H. W. Bush's Predictions ([Source](https://twitter.com/georgehwbush/status/974345353322483713?lang=en))*
+Former President George H. W. Bush's Predictions ([Source](https://twitter.com/georgehwbush/status/974345353322483713?lang=en))
 
 A lot of people Kaggle challenged participants to do a lot better than that and craft their own set of predictions. These differed from traditional bracket predictions in two key ways.
 
@@ -31,7 +31,30 @@ A lot of people Kaggle challenged participants to do a lot better than that and 
 ## The Data
 Graciously provided in the competition was a treasure trove of NCAA historical data. Not only did we have the outcome of every game, but we had a timestamp of every individual play.
 
-EXAMPLE Data
+
+{% assign mydata=site.data.pbp_data %}
+
+<table class="table table-hover">
+    <caption>Play by Play Data</caption>
+    <thead>
+    <tr class = "table-dark">
+    {% for column in mydata[0] %}
+        <th>{{ column[0] }}</th>
+    {% endfor %}
+    </tr>
+    </thead>
+    <tbody>
+    {% for row in mydata %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell[1] }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
 
 For instance, we can see that at 00:00 sank a 3 pointer
 
@@ -41,15 +64,15 @@ For this project, I paired up with my good friend **Justin Wong** who helped me 
 
 1. Ignore player level data
 
-...Modeling at the individual level was certainly a consideration early on. This was ruled out for a few reasons. Firstly, there was far less data on collegiate level athletes as opposed to their professional counterparts. Secondly, in a team game like basketball, it's extraordinarily difficult to identify a single player's contribution to a game, especially when quantifying defensive contribution. We decided it would be
+Modeling at the individual level was certainly a consideration early on. This was ruled out for a few reasons. Firstly, there was far less data on collegiate level athletes as opposed to their professional counterparts. Secondly, in a team game like basketball, it's extraordinarily difficult to identify a single player's contribution to a game, especially when quantifying defensive contribution. We decided it would be
 
 2. Predict first on **box score**, then convert to probability.
 
-...We are ultimately interested in the zero sum outcome of a match. Whether a team wins by 1pt or 100pts isn't relevant for the competition. That being said, it is my notion that the margin of victory has encoded in it valuable information on the true strength of a team.
+We are ultimately interested in the zero sum outcome of a match. Whether a team wins by 1pt or 100pts isn't relevant for the competition. That being said, it is my notion that the margin of victory has encoded in it valuable information on the true strength of a team.
 
 3. Use XGBoost and LightGBM
 
-...These two boosting algorithms are Kaggle staples. Choosing to use these was mainly in the interest of getting more familiar with them! The final model was primarily an ensemble of these two models.
+These two boosting algorithms are Kaggle staples. Choosing to use these was mainly in the interest of getting more familiar with them! The final model was primarily an ensemble of these two models.
 
 
 
