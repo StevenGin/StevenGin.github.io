@@ -34,6 +34,7 @@ Graciously provided in the competition was a treasure trove of NCAA historical d
 
 {% assign mydata=site.data.pbp_data %}
 
+<div class="table-responsive">
 <table class="table table-hover">
     <caption>Play by Play Data</caption>
     <thead>
@@ -53,7 +54,7 @@ Graciously provided in the competition was a treasure trove of NCAA historical d
     {% endfor %}
     </tbody>
 </table>
-
+</div>
 
 
 For instance, we can see that at 00:00 sank a 3 pointer
