@@ -12,21 +12,21 @@ $(function () {
 
 # Welcome
 
-Ever year, **<a href="#" style="color: #343a40; text-decoration: none;" data-toggle="popover" data-placement="top" data-trigger="focus" title="Kaggle" data-content="Kaggle is a website that hosts Machine Learning competitions.">Kaggle</a>** hosts a competition to predict the NCAA Division I Men's Basketball Tournament, known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring and put my predictive mettle to the test. The experience was incredibly arduous but equally rewarding. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations, that I'd love to share.
+Ever year, **<a href="#" style="color: #343a40; text-decoration: none;" data-toggle="popover" data-placement="top" data-trigger="focus" title="Kaggle" data-content="Kaggle is a website that hosts Machine Learning competitions.">Kaggle</a>** hosts a competition to predict the NCAA Division I Men's Basketball Tournament, known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring and put my predictive mettle to the test. The experience was incredibly arduous but equally rewarding. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations. I'd love to share what I've learned.
 
 ## The Competition
-Some of you might be familiar with **March Madness brackets**. It's a longstanding tradition for basketball fans  predict winners for each tournament match, often putting money on the line. The American Gambling Association estimates Americans will bet $8.5B in 2019 on just March Madness alone ([Source](https://www.americangaming.org/wp-content/uploads/2019/03/March-Madness-One-Pager.pdf)). How hard is it to get a perfect bracket? If you were inclined to just arbitrarily select teams to build your bracket, your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. Those are some pretty bad odds.
+You might be familiar with **March Madness brackets**. A longstanding tradition accompanying the tournament asks basketball fans to predict winners for each tournament match. Often putting money on the line. The American Gambling Association estimates Americans will bet $8.5B in 2019 on March Madness alone ([Source](https://www.americangaming.org/wp-content/uploads/2019/03/March-Madness-One-Pager.pdf)). How hard is it to get a perfect bracket? If you were inclined to flip a coin to arbitrarily select winners, your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. Those are some pretty bad odds.
 
 ![Former President George H. W. Bush's Predictions](/assets/images/bush_mm.jpg)
 
 Former President George H. W. Bush's Predictions ([Source](https://twitter.com/georgehwbush/status/974345353322483713?lang=en))
 
-A lot of people Kaggle challenged participants to do a lot better than that and craft their own set of predictions. These differed from traditional bracket predictions in two key ways.
+Kaggle challenged participants to do a lot better than that and craft their own set of predictions. These differed from traditional bracket predictions in two key ways.
 
 ### Differences
 1. Kaggle competitors predict the outcome of every possible match (although they are only evaluated on games that actually occur). This is opposed to regular bracket predictions where wrong early picks can lock you out of matchups deeper in the tournament.
 
-2. Kaggle competitors predict the chance each team will win. Participants are then evaluated using **<a href="#" onclick="return false;" style="color: #343a40; text-decoration: none;" data-toggle="popover" data-placement="top" data-trigger="focus" title="Log Loss" data-content="Log Loss quantifies the accuracy of a classifier by penalising false classifications. Minimising the Log Loss is basically equivalent to maximising the accuracy of the classifier.">Log Loss</a>**. In normal brackets, the quality of a prediction is gauged by tallying up the amount of correctly selected winners.
+2. Kaggle competitors predict the chance each team will win. Participants are then evaluated using **<a href="#" onclick="return false;" style="color: #343a40; text-decoration: none;" data-toggle="popover" data-placement="top" data-trigger="focus" title="Log Loss" data-content="Log Loss quantifies the accuracy of a classifier by penalizing false classifications.">Log Loss</a>**. In normal brackets, the quality of a prediction is gauged by tallying up the amount of correctly selected winners.
 
 ## The Data
 Graciously provided in the competition was a treasure trove of NCAA historical data. Not only did we have the outcome of every game, but we had a timestamp of every individual play.
@@ -36,7 +36,7 @@ Graciously provided in the competition was a treasure trove of NCAA historical d
 
 <div class="table-responsive">
 <table class="table table-hover">
-    <caption>Play by Play Data</caption>
+    <caption>Excerpt of NCAA Play-by-Play Data 2010</caption>
     <thead>
     <tr class = "table-dark">
     {% for column in mydata[0] %}
