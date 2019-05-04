@@ -12,7 +12,7 @@ $(function () {
 
 # Welcome
 
-Ever year, **<a href="#" style="color: #343a40; text-decoration: none;" data-toggle="popover" data-placement="top" data-trigger="focus" title="Kaggle" data-content="Kaggle is a website that hosts Machine Learning competitions.">Kaggle</a>** hosts a competition to predict the NCAA Division I Men's Basketball Tournament, known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring and put my predictive mettle to the test. The experience was incredibly arduous but equally rewarding. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations. I'd love to share what I've learned.
+Ever year, **<a href="#" onclick="return false;" style="color: #343a40; text-decoration: none;" data-toggle="popover" data-placement="top" data-trigger="focus" title="Kaggle" data-content="Kaggle is a website that hosts Machine Learning competitions.">Kaggle</a>** hosts a competition to predict the NCAA Division I Men's Basketball Tournament, known better colloquially as **March Madness**. In 2018, I decided to throw my name in the ring and put my predictive mettle to the test. The experience was incredibly arduous but equally rewarding. While I didn't win (or even come close!), I still built a very powerful model built on top of some novel innovations. I'd love to share what I've learned.
 
 ## The Competition
 You might be familiar with **March Madness brackets**. A longstanding tradition accompanying the tournament asks basketball fans to predict winners for each tournament match. Often putting money on the line. The American Gambling Association estimates Americans will bet $8.5B in 2019 on March Madness alone ([Source](https://www.americangaming.org/wp-content/uploads/2019/03/March-Madness-One-Pager.pdf)). How hard is it to get a perfect bracket? If you were inclined to flip a coin to arbitrarily select winners, your chance to win would be 1 in 2^63 or 1 in 9.2 quintillion. Those are some pretty bad odds.
@@ -78,13 +78,11 @@ These two boosting algorithms are Kaggle staples. Choosing to use these was main
 
 
 ### Basketball Stats
-Now that we've identified we want to try and predict box score, I needed to figure out what were the predictors that would lead us to figure that out.
+Now that we have identified that we want to try and predict box score, I needed to figure out the predictors that would lead us there.
 
-Surprising as it may be (for someone working on this competition), I knew next to nothing about basketball. I started asking around to try and understand what were the important statistics to look at in professional basketball. All roads seemed to lead me to kenpom.com.
+Surprising as it may be (for someone working on this competition), I knew next to nothing about basketball. I relied a lot on friends to educate me, especially in understanding the perception of what the important factors were in playing good basketball. I wanted to be looking at the same things same statistics that sports analysts in the industry were looking at. My research eventually lead me to Ken Pomeroy. After quitting his job as a meteorologist and working on his stats website fulltime, Ken has since become the de facto expert in college basketball. He's written for the New York Times, ESPN, Sports Illustrated as well as worked with the Houston Rockets. Needless to say, his website kenpom.com was a fantastic resource for me.
 
-Ken Pom is blah lah blah.
-
-Three particular statistics caught my eye.
+On his website, three particular raw statistics caught my eye. In particular, because they are a decomposition of box score.
 
 **Offensive Efficiency**: Points scored per 100 possessions.
 
@@ -94,13 +92,25 @@ Three particular statistics caught my eye.
 
 https://kenpom.com/blog/national-efficiency/
 
-Ken Pom then converts these raw statistics to be adjusted for expected stats versus an average team.
+So, at the end of any given game, a team would have these statistics for that game.
+Okay awesome. How do we use these to predict future games? We need to turn these numbers into something that reflective of a team's actual offensive and defensive abilities, and not just a single data point. Numbers which we could use as inputs for our mode. Ken pom achieves this by averaging these statistics by game. He goes on to calculate an expectation of future statistics using a linear formula as follow.
+
+
+Ken Pom then converts these raw statistics to be adjusted for expected stats versus an average team. He does this
+
+
+Not only are these some of the more popular metrics, using only these three values we could theoretically calculate an average box score for a team. Theoretically I'd like to include these statistics as inputs into my model. Among lots of other feature engineering, I ran with these inputs for a while.
+
+
+I had three main issues.
+
+
+1) Consistency of Expectations
+2) Strength of Schedule
+3) High variability for early season games
 
 
 
-Theoretically using solely these statistics, we could generate box scores.
-
-What's the primary flaw
 
 ### ELO System
 
